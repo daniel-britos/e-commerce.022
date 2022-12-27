@@ -1,0 +1,20 @@
+﻿@page "/"
+@using Ecommerce.Componentes
+@using Ecommerce.Dto
+
+<PageTitle>Index</PageTitle>
+
+<DatosPersonales PersonalProfile="DatosPersonales"></DatosPersonales>
+
+<Todo></Todo>
+
+@code {
+    DatosPersonalesDto DatosPersonales = new DatosPersonalesDto()
+    {
+        Descripcion = "Ejemplo descripción",
+        Telefono = "1122549708",
+        Nombre = "Mathias",
+        Apellido = "Benvenuto",
+        Email = "mathiasdvt7@gmail.com",
+    };
+}

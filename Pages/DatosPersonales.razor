@@ -1,0 +1,34 @@
+﻿@using Ecommerce.Dto
+@using Ecommerce.Componentes
+@inherits DatosPersonalesBase
+
+<h3>DatosPersonales</h3>
+
+<div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h3>@PersonalProfile.Nombre @PersonalProfile.Apellido</h3>
+        </div>
+    </div>
+</div>
+
+<h3>Perfil Personal</h3>
+<div class="row">
+    <div class="col-sm-12">
+        <p>
+            @PersonalProfile.Descripcion
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3" style="background-color:@Color">
+        <b>Teléfono:</b> @PersonalProfile.Telefono
+    </div>
+    <div class="col-sm-3">
+        <b>Email:</b> @PersonalProfile.Email
+    </div>
+</div>
+
+@code{
+
+}

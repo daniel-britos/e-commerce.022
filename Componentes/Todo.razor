@@ -1,0 +1,30 @@
+﻿@page "/todo"
+@using Ecommerce.Componentes
+
+<h3>Todo (@todos.Count(todo => !todo.IsDone))</h3>
+<ul>
+    @foreach (var todo in todos)
+    {
+        <li>
+            <input type="checkbox" @bind="todo.IsDone"/>
+            <input @bind="todo.Title" />
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newTodo"/>
+<button @onclick="AddTodo">Add todo</button>
+
+@code {
+    private List<Componentes.Todo> todos = new();
+    private string? newTodo { get; set; }
+
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+                todos.Add(new Componentes.Todo { Title = newTodo });
+            newTodo = string.Empty;
+        }
+    }
+}
